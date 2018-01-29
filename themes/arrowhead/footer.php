@@ -1,33 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-<script>
-	$(function() {
-		var Accordion = function(el, multiple) {
-			this.el = el || {};
-			this.multiple = multiple || false;
-
-			// Variables privadas
-			var links = this.el.find('.link');
-			// Evento
-			links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
-		}
-
-		Accordion.prototype.dropdown = function(e) {
-			var $el = e.data.el;
-			$this = $(this),
-				$next = $this.next();
-
-			$next.slideToggle();
-			$this.parent().toggleClass('open');
-
-			if (!e.data.multiple) {
-				$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
-			};
-		}
-
-		var accordion = new Accordion($('#accordion'), false);
-	});
-</script>
 <div class="newsarrow">
 	<div class="newsbar pd gbg">
 		<div class="footarrow"></div>
@@ -106,7 +76,35 @@
 				</div>
 			</div>
 		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	</footer>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script>
+	$(function() {
+		var Accordion = function(el, multiple) {
+			this.el = el || {};
+			this.multiple = multiple || false;
+
+			// Variables privadas
+			var links = this.el.find('.link');
+			// Evento
+			links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+		}
+
+		Accordion.prototype.dropdown = function(e) {
+			var $el = e.data.el;
+			$this = $(this),
+				$next = $this.next();
+
+			$next.slideToggle();
+			$this.parent().toggleClass('open');
+
+			if (!e.data.multiple) {
+				$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+			};
+		}
+
+		var accordion = new Accordion($('#accordion'), false);
+	});
+</script>

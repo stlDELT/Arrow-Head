@@ -985,7 +985,7 @@ section.contractor-homeowner-more-info {
 	position: relative
 }
 .footarrow {
-	background: url(http://127.0.0.1/wordpress/wp-content/uploads/2018/01/grey1.png) center center no-repeat;
+	background: url(/wp-content/uploads/img/grey1.png) center center no-repeat;
 	background-size: contain;
 	height: 200%;
 	position: absolute;
